@@ -15,15 +15,21 @@
 #### Сборка Docker-образа 
 Для сборки Docker образа следует выполнить команду <code> docker build -t apilab:v1 . </code> находясь в директории с <code>Dockerfile</code> и собранным <code>apilab-1.0.jar</code> . 
 #### Примеры запросов к apilab . 
+Формат JSON:
+<code>{name: "string", department: "string ",room: integer, callnumber: integer}</code>
+
+
 ##### Получить список всех номеров телефонов: 
 <code>/api/v1/persons</code>
 В ответ будет получен JSON. 
 ##### Получить запись по id: 
-<code>/api/v1/{id}</code> \
+<code>/api/v1/{id}</code> 
 В ответ будет получен JSON с результатом. 
 ##### Добавить запись: 
-GET:<code>/api/v1/<code>
-В ответ будет получен статус 200 ОК.
-  
+POST : <code>/api/v1/{JSON}</code>
+В ответ будет получен статус <code>200 ОК</code>.
+##### Удалить запись: 
+POST : <code>/api/v1/{id}</code>
+В ответ будет получен статус <code>204 No Content</code>.
 
 
