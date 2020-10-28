@@ -10,17 +10,16 @@
 #### Подготовка базы данных 
 В файле <code>./src/main/resources/application.properties</code> следует указать в параметре <code>spring.datasource.username = </code> имя пользователя для доступа в БД, в параметре <code>spring.datasource.password = </code> пароль для доступа к БД. В параметре <code>spring.datasource.url = </code> необходимо указать адрес для доступа к БД, например для доступа к БД запущенной на локальном компьютере значение будет <code>jdbc:postgresql://localhost:5432/postgresql</code>, для БД запущенной в docker на локальной машине значение будет <code>jdbc:postgresql://172.17.0.1:5432/postgresql</code>.   
 Настройка базы данных осуществляется с помощью <code>./src/main/resources/schema.sql</code>. Для этого необходимо выполнить команду <code>psql -h <адрес_БД> -p <порт_БД> -U <имя_пользователя> -d public -f "schema.sql"</code> .  
-  
 Тестовые данные для БД находятся в <code> ./src/main/resources/data.sql </code> . Для этого необходимо выполнить команду <code>psql -h <адрес_БД> -p <порт_БД> -U <имя_пользователя> -d public -f "data.sql"</code> .
 
 
 #### Клонирование репозитария
 Для клонирования репозитория необходимо выполнить команду <code>git clone https://github.com/delock1/lab1.git</code> или же скачать zip-архив и распаковать его.
 #### Сборка проекта с помощью Maven
-Установка приложения осуществляется при помощи автоматической системы сборки проектов Maven. Для установки необходимо выполнить команду  <code>mvn package -Dmaven.test.skip=true</code> находясь в директории проекта. После окончания выполнения команды появится папка <code>target</code> в которой находится скомпилированный код и файл <code>apilab-1.0.jar</code>.
+Сборка приложения осуществляется при помощи автоматической системы сборки проектов Maven. Для сборки необходимо выполнить команду  <code>mvn package -Dmaven.test.skip=true</code>(с пропуском тестирования) находясь в директории проекта. После окончания выполнения команды появится папка <code>target</code> в которой находится скомпилированный код и файл <code>apilab-1.0.jar</code>.
 #### Сборка и запуск Docker-образа 
 Для сборки Docker образа следует выполнить команду <code> docker build -t apilab:v1 . </code> находясь в директории с <code>Dockerfile</code> и собранным <code>apilab-1.0.jar</code> .  
-Запуск осуществляется командой <code>docker run -p 8080:8080 apilab:v1 </code>, где первым кказывается порт в локальной системе, а вторым порт docker.  
+Запуск осуществляется командой <code>docker run -p 8080:8080 apilab:v1 </code>, где первым указывается порт в локальной системе, а вторым порт docker.  
 #### Примеры запросов к apilab . 
 Формат JSON:
 <code>{name: "string", department: "string ",room: integer, callnumber: integer}</code>
