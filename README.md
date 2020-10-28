@@ -11,7 +11,7 @@
 В файле <code>./src/main/resources/application.properties</code> следует указать в параметре <code>spring.datasource.username = </code> имя пользователя для доступа в БД, в параметре <code>spring.datasource.password = </code> пароль для доступа к БД. В параметре <code>spring.datasource.url = </code> необходимо указать адрес для доступа к БД, например для доступа к БД запущенной на локальном компьютере значение будет <code>jdbc:postgresql://localhost:5432/postgresql</code>, для БД запущенной в docker на локальной машине значение будет <code>jdbc:postgresql://172.17.0.1:5432/postgresql</code>.   
 Настройка базы данных осуществляется с помощью <code>./src/main/resources/schema.sql</code>. Для этого необходимо выполнить команду <code>psql -h <адрес_БД> -p <порт_БД> -U <имя_пользователя> -d public -f "schema.sql"</code> .  
 Тестовые данные для БД находятся в <code> ./src/main/resources/data.sql </code> . Для этого необходимо выполнить команду <code>psql -h <адрес_БД> -p <порт_БД> -U <имя_пользователя> -d public -f "data.sql"</code> .    
-Также можно установить postgresql с помощью docker использую комманды <code>docker pull postgres<code> для скачивания и <code>docker run -e POSTGRES_PASSWORD=root -p 5432:5432 postgres</code> для запуска.
+Также можно установить postgresql с помощью docker использую комманды <code>docker pull postgres</code> для скачивания и <code>docker run -e POSTGRES_PASSWORD=root -p 5432:5432 postgres</code> для запуска.
 
 
 
