@@ -34,4 +34,4 @@ POST : <code>/api/v1/{id}</code>
 
 ##### Также приложение возвращает значение hostname: 
 <code>/api/v1/status</code>
-В ответ будет получен JSON в виде {hostname: "hostname"}. 
+В ответ будет получен JSON в виде <code>{hostname: "hostname"}</code>. 
