@@ -32,4 +32,6 @@ POST : <code>/api/v1/{JSON}</code>
 POST : <code>/api/v1/{id}</code>
 В ответ будет получен статус <code>204 No Content</code>.
 
-
+##### Также приложение возвращает значение hostname: 
+<code>/api/v1/status</code>
+В ответ будет получен JSON в виде {hostname: "hostname"}. 
