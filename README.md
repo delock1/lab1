@@ -18,7 +18,7 @@
 Для клонирования репозитория необходимо выполнить команду <code>git clone https://github.com/delock1/lab1.git</code> или же скачать zip-архив и распаковать его.
 #### Сборка проекта с помощью Maven
 Установка приложения осуществляется при помощи автоматической системы сборки проектов Maven. Для установки необходимо выполнить команду  <code>mvn package -Dmaven.test.skip=true</code> находясь в директории проекта. После окончания выполнения команды появится папка <code>target</code> в которой находится скомпилированный код и файл <code>apilab-1.0.jar</code>.
-#### Сборка Docker-образа 
+#### Сборка и запуск Docker-образа 
 Для сборки Docker образа следует выполнить команду <code> docker build -t apilab:v1 . </code> находясь в директории с <code>Dockerfile</code> и собранным <code>apilab-1.0.jar</code> .  
 Запуск осуществляется командой <code>docker run -p 8080:8080 apilab:v1 </code>, где первым кказывается порт в локальной системе, а вторым порт docker.  
 #### Примеры запросов к apilab . 
@@ -27,18 +27,18 @@
 
 
 ##### Получить список всех номеров телефонов: 
-<code>/api/v1/persons</code>
+<code>curl -X GET http://127.0.0.1:8080/api/v1/persons</code>
 В ответ будет получен JSON. 
 ##### Получить запись по id: 
-<code>/api/v1/{id}</code> 
+<code>curl -X GET http://127.0.0.1:8080/api/v1/{id}</code> 
 В ответ будет получен JSON с результатом. 
 ##### Добавить запись: 
-POST : <code>/api/v1/{JSON}</code>
+<code>curl -X POST http://127.0.0.1:8080/api/v1/ -d ‘{«name»: «Имя″, "department": "Отдел", "room": 101, "callnumber": 155}’ -H «Content-Type:application/json»</code>
 В ответ будет получен статус <code>200 ОК</code>.
 ##### Удалить запись: 
-POST : <code>/api/v1/{id}</code>
+<code>curl -X POST http://127.0.0.1:8080/api/v1/{id}</code>
 В ответ будет получен статус <code>204 No Content</code>.
 
 ##### Также приложение возвращает значение hostname: 
-<code>/api/v1/status</code>
+<code>curl -X GET http://127.0.0.1:8080/api/v1/status</code>
 В ответ будет получен JSON в виде <code>{hostname: "hostname"}</code>. 
