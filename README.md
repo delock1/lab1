@@ -19,7 +19,8 @@
 #### Сборка проекта с помощью Maven
 Установка приложения осуществляется при помощи автоматической системы сборки проектов Maven. Для установки необходимо выполнить команду  <code>mvn package -Dmaven.test.skip=true</code> находясь в директории проекта. После окончания выполнения команды появится папка <code>target</code> в которой находится скомпилированный код и файл <code>apilab-1.0.jar</code>.
 #### Сборка Docker-образа 
-Для сборки Docker образа следует выполнить команду <code> docker build -t apilab:v1 . </code> находясь в директории с <code>Dockerfile</code> и собранным <code>apilab-1.0.jar</code> . 
+Для сборки Docker образа следует выполнить команду <code> docker build -t apilab:v1 . </code> находясь в директории с <code>Dockerfile</code> и собранным <code>apilab-1.0.jar</code> .  
+Запуск осуществляется командой <code>docker run -p 8080:8080 apilab:v1 </code> . 
 #### Примеры запросов к apilab . 
 Формат JSON:
 <code>{name: "string", department: "string ",room: integer, callnumber: integer}</code>
