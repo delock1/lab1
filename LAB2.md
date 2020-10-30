@@ -4,8 +4,9 @@
 ## Цель лабораторной работы: 
 Целью лабораторной работы является знакомство с кластерной архитектурой на примере Kubernetes, а также деплоем приложения в кластер.
 
-##Манифест deployment.yaml  
-<code>apiVersion: apps/v1
+## Манифест deployment.yaml  
+```yaml
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-deployment
@@ -36,7 +37,7 @@ spec:
       - ip: "192.168.49.1" # The IP of your VM
         hostnames:
         - postgres.local
-  </code>
+ ```
 
 
 
