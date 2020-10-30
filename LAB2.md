@@ -4,7 +4,7 @@
 ## Цель лабораторной работы: 
 Целью лабораторной работы является знакомство с кластерной архитектурой на примере Kubernetes, а также деплоем приложения в кластер.
 
-## Манифест deployment.yaml  
+### Манифест deployment.yaml  
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -39,7 +39,7 @@ spec:
         - postgres.local
  ```
  
- ## Манифест service.yaml
+ ### Манифест service.yaml
  ```yaml
 apiVersion: v1
 kind: Service
@@ -55,9 +55,12 @@ spec:
   selector:
     app: my-app
  
- 
  ```
+### Скриншот шага 3.3 
+![scr1](https://yadi.sk/i/QTx-tKAZZNIMtQ "Шаг 3.3")
 
+### Скриншот шага 3.5
+![scr2](https://yadi.sk/i/D6eu9uhkXs2-uQ "Шаг 3.5")
 
 
 Сделать в github/gitlab Markdown-страницу, где указать:
