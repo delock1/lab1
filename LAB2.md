@@ -38,6 +38,25 @@ spec:
         hostnames:
         - postgres.local
  ```
+ 
+ ## Манифест service.yaml
+ ```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: NodePort
+  ports:
+    - nodePort: 31317
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: my-app
+ 
+ 
+ ```
 
 
 
